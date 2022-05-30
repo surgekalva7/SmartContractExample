@@ -50,7 +50,15 @@ Blockchain Demo:
 Consensus:
     - the mechanism udes to agree on the state of a blockchain
     Chain Selection - How to determine what is the true blockchain.
-        
     Sybil Resistance - using pseudonymous identities and uses them to gain a disproportionately large influence.
-        Proof of Work - 
-        Proof of Stake
+        Proof of Work - Uses competetive validation method to confirm transactions and add new blocks to the blochchain(Lots of Energy) ETH
+        Proof of Stake - randomly select miners to validate transactions(Better for the enviroment) ETH 2.0
+    Block Confirmations - The number of blocks being added to the block in the longest line of blocks
+
+Attacks:
+    Sybil - Numerous accounts created to influence the network
+    Longest Chain Rule - The longest chain is essentially the leader and when it adds a new block the others in the network will do the same.
+
+Scalability:
+    - When a lot of people want to use the blockchain, the price for the gas will sky rocket, which means gas increases as more people will join.
+    Sharding - They will increase the amount of block space by adding new chains to the side of the existing main base chain
