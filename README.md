@@ -86,7 +86,14 @@ Solidity:
     License Identifier:
         - In order to make the code open source, which most smart contract are, a License Identifier is required
         - (//SPDX-License-Identifier: MIT)
-    
+
+Returns:
+    function retrieve() public view returns (uint256){
+        return number;
+    }
+    - It is a view function since we are not changing the state
+
+
 Structs(Objects):
     struct People{
         uint256 fav_number;
@@ -104,3 +111,32 @@ Maps:
     This is the same thing as a dictionary in python.
     mapping(string => uint256) public nameToFavoriteNumber;
         nameToFavoriteNumber["Becca"] = 24; #This will add the keyword Becca to the dictionary and set it to value 24.
+
+Creating the Smart Contract on the Blockchain:
+    - Make sure that the MetaMask extension is added on to chrome
+    - Then change the enviroment to the Injected Web3, and MetaMask will take care of the execution process
+    - Then Deploy and you will get a notification to continue from MetaMask
+    - If you make changes to the contract by adding to the array or assigning a value(Orange icon), a new contract will be created
+    - However if you make calls to the gray items, it will not result in a new contract, since we are just viewing a state
+
+Storage Factory in Solidity:
+    - importing a contract is done by file path:
+        Given that SimpleStorage is in the same folder as StorageFactory:
+            import "./SimpleStorage.sol"
+    - Deploying a contract from another contract:
+        contract StorageFactory{
+            SimpleStorage[] public simpleStorageArray;
+            function createSimpleStorageContract() public{
+                SimpleStorage simpleStorage = new SimpleStorage();
+                simpleStorageArray.push(simpleStorage);
+            }
+        }
+    - When calling functions from another contract we need the address of the contract that we are interested in and the ABI(from the import) of the contract as well.
+        SimpleStorage simpleStorage = SimpleStorage(address(simpleStorageArray[_simpleStorageIndex]));
+        simpleStorage.store(_simpleStorageNumber);
+    
+Inheritence:
+    - When you want the features of another class but also want to create objects of that same class in the new class, inheritence is a good way to go.
+        contract StorageFactory is SimpleStorage{
+            //Storage Factory will have all of the functions and variables from the Simple Storage
+        }
