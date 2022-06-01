@@ -83,3 +83,24 @@ Solidity:
         We want to view some state of the blockchain
     Pure Functions
         Does not save state
+    License Identifier:
+        - In order to make the code open source, which most smart contract are, a License Identifier is required
+        - (//SPDX-License-Identifier: MIT)
+    
+Structs(Objects):
+    struct People{
+        uint256 fav_number;
+        string name;
+    }
+    People public person = People({fav_number: 2, name: "Patrick"});
+
+Arrays:
+    Dyanamic Array = People[] public people;
+        - In order to add people to the dynamic array we must push
+            people.push(People("Todd", 55))
+    Fixed Size = People[1] public people;
+
+Maps:
+    This is the same thing as a dictionary in python.
+    mapping(string => uint256) public nameToFavoriteNumber;
+        nameToFavoriteNumber["Becca"] = 24; #This will add the keyword Becca to the dictionary and set it to value 24.
