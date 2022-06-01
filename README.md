@@ -62,3 +62,24 @@ Attacks:
 Scalability:
     - When a lot of people want to use the blockchain, the price for the gas will sky rocket, which means gas increases as more people will join.
     Sharding - They will increase the amount of block space by adding new chains to the side of the existing main base chain
+
+Solidity:
+    Defining the version:
+        pragma solidity <=0.6.0 <0.9.0
+    Initialization:
+        uint256 fav_num; -> This will result in 0
+        uint256 favorite_num = 5;
+        bool favorite_bool = true;
+        string favorite_string = "String";
+        int256 favorite_int = -5;
+        address favorite_address = 0x2389028390829038018398290
+        bytes32 favorite_bytes = "cat"
+    4 Forms of visibility:
+        external
+        public
+        internal
+        private
+    View Functions:
+        We want to view some state of the blockchain
+    Pure Functions
+        Does not save state
