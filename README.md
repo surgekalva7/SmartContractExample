@@ -148,3 +148,11 @@ Creating Payables:
 
      }
      - When trying to add the value to an address make sure to place a number in the value location
+
+The Oracle Problem:
+    - Smart contracts are unable to connect with external systems, data feeds, APIS, existing payment systems or any other off-chain resouyrces on their own.
+    - Can't use an API because calling on different blocks might result in different returned valeus from the API resulting an error(No consensus)
+    - Using a centralized oracle negates he benefits of smart contracts and introduces new privacy issues
+
+Chainlink:
+    - This solves the Oracle Problem by using a decentralized Oracle network
