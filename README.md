@@ -140,3 +140,11 @@ Inheritence:
         contract StorageFactory is SimpleStorage{
             //Storage Factory will have all of the functions and variables from the Simple Storage
         }
+
+Creating Payables:
+    function fund() public payable {
+         addressToAmountFunded[msg.sender] += msg.value;
+        # msg.sender is the sender(address) of the function call and the msg.value is the amount that they sent
+
+     }
+     - When trying to add the value to an address make sure to place a number in the value location
