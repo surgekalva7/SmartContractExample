@@ -148,6 +148,10 @@ Creating Payables:
 
      }
      - When trying to add the value to an address make sure to place a number in the value location
+     - Require:
+        - When you need to make sure that the user is sending a valid amount of money make sure to have a require statement that checks it.
+        - require(getConversionRate(msg.value)>=minimumUSD, "You need to spend more ETH!);
+        - If it does not meet the requirement then it sends the user their money back
 
 The Oracle Problem:
     - Smart contracts are unable to connect with external systems, data feeds, APIS, existing payment systems or any other off-chain resouyrces on their own.
@@ -156,3 +160,16 @@ The Oracle Problem:
 
 Chainlink:
     - This solves the Oracle Problem by using a decentralized Oracle network
+
+ABI:
+    - To interact with a smart a deployed smart contract you will need an ABI
+    - Interfaces compile down to an ABI
+    - Always beed ab ABI to interact with a contract
+
+Aggregator:
+    - When dealing with different currencies in Solidity use the aggregator
+    - import '@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol'
+    https://docs.chain.link/docs/ethereum-addresses/
+
+Library:
+    - Similar to contracts however they are only deployed once at a specific addresss and their code is reused.
