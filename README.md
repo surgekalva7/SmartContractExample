@@ -147,6 +147,9 @@ Creating Payables:
         # msg.sender is the sender(address) of the function call and the msg.value is the amount that they sent
 
      }
+     - In order to allow for deployment of payables we need to create a constructor for the payable in the first place 
+     constructor () public  payable {
+    }
      - When trying to add the value to an address make sure to place a number in the value location
      - Require:
         - When you need to make sure that the user is sending a valid amount of money make sure to have a require statement that checks it.
@@ -173,3 +176,21 @@ Aggregator:
 
 Library:
     - Similar to contracts however they are only deployed once at a specific addresss and their code is reused.
+
+Withdraw:
+    - In order to get the money back from that is stuck in the contract, we need to use a withdraw function
+    - msg.sender.transfer(address(this).balance);
+    - In order to make sure the money is going to the proper sender it is good idea to make variables
+        require(msg.sender==owner);
+
+Modifiers:
+    - Aims to change the behaviour of a function wherever it is attached.
+        modifier SomethingBefore {
+            require(/* check something first */);
+            _; // resume with function execution
+        }
+        // Do one where modifier is placed in the middle
+        modifier SomethingAfter {
+            _; // run function first
+            require(/* then check something */)
+}
